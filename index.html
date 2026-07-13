@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue-Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <main>
+        <nav class="main-menu">
+            <div>
+                <div class="user-info">
+                    <img src="assets/account/person-3.jpg" alt="user" />
+                    <p>Ouledi Reagan</p>
+                </div>
+                <ul>
+                    <li class="nav-item active" data-section="discover">
+                        <a href="#">
+                            <i class="fa fa-map nav-icon"></i>
+                            <span class="nav-text">Discover</span>
+                        </a>
+                    </li>
+    
+                    <li class="nav-item" data-section="trending">
+                        <a href="#">
+                            <i class="fa fa-arrow-trend-up nav-icon"></i>
+                            <span class="nav-text">Trending</span>
+                        </a>
+                    </li>
+    
+                    <li class="nav-item" data-section="albums">
+                        <a href="#">
+                            <i class="fa fa-compact-disc nav-icon"></i>
+                            <span class="nav-text">Album</span>
+                        </a>
+                    </li>
+    
+                    <li class="nav-item" data-section="playlist">
+                        <a href="#">
+                            <i class="fa fa-circle-play nav-icon"></i>
+                            <span class="nav-text">Playlist</span>
+                        </a>
+                    </li>
+    
+                    <li class="nav-item" data-section="favorites">
+                        <a href="#">
+                            <i class="fa fa-heart nav-icon"></i>
+                            <span class="nav-text">Favorites</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+  
+            <ul>
+                <li class="nav-item" data-section="account">
+                    <a href="#">
+                        <i class="fa fa-user nav-icon"></i>
+                        <span class="nav-text">Account</span>
+                    </a>
+                </li>
+    
+                <li class="nav-item" data-section="settings">
+                    <a href="#">
+                        <i class="fa fa-gear nav-icon"></i>
+                        <span class="nav-text">Settings</span>
+                    </a>
+                </li>
+    
+                <li class="nav-item" data-section="logout">
+                    <a href="#">
+                        <i class="fa fa-right-from-bracket nav-icon"></i>
+                        <span class="nav-text">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+  
+        <section class="content">
+
+            <div class="left-content">
+                <div class="slider-container">
+                    <h1>Popular Playlist</h1>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="assets/main/you&I.jpg" />
+                                                <div class="slide-overlay">
+                                    <h2>Mimi na Wewe</h2>
+                                    <button data-track="0">
+                                        Listen Now <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/main/relaxing.jpg" />
+                                <div class="slide-overlay">
+                                    <h2>Relaxing Music</h2>
+                                    <button data-track="1">
+                                        Listen Now <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/main/my_lofi_avatar.png" />
+                                <div class="slide-overlay">
+                                    <h2>Lo-Fi</h2>
+                                    <button data-track="2">
+                                        Listen Now <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/main/dance.jpg" />
+                                <div class="slide-overlay">
+                                    <h2>EDM</h2>
+                                    <button data-track="3">
+                                        Listen Now <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/main/soul.jpg" />
+                                <div class="slide-overlay">
+                                    <h2>Soul</h2>
+                                    <button data-track="4">
+                                        Listen Now <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+
+                <div class="section-placeholder hidden" id="sectionPlaceholder">
+                    <div class="section-message">
+                        <h2>Welcome to Discover</h2>
+                        <p>Select a section in the left panel to explore music, playlists, favorites, account details, and more.</p>
+                    </div>
+                </div>
+  
+                <div class="artists">
+                    <h1>Featured Artists</h1>
+                    <div id="artistContainer" class="artist-container containers"></div>
+                </div>
+  
+                <div class="albums">
+                    <h1>Recommended Albums</h1>
+                    <div id="albumContainer" class="album-container containers"></div>
+            </div>
+          </div>
+  
+            <div class="right-content">
+                <div class="recommended-songs">
+                    <h1>Recommended Songs</h1>
+                    <div class="song-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="songSearch" placeholder="Search songs or artists" />
+                    </div>
+                    <div class="song-container"></div>
+                </div>
+            </div>
+  
+            <div class="music-player">
+                <div class="album-cover">
+                    <img src="assets/player/timeofmylife.jpeg" id="rotatingImage" alt="" />
+                    <span class="point"></span>
+                </div>
+  
+                <h2>Time of My Life</h2>
+                <p>Nyashinski & Bien</p>
+  
+                <audio id="song">
+                    <source src="assets/music/Nyashinski - Time Of My Life.mp3" type="audio/mpeg" />
+                </audio>
+  
+                <div class="time-row">
+                    <span id="current-time">0:00</span>
+                    <input type="range" value="0" id="progress" />
+                    <span id="duration">0:00</span>
+                </div>
+  
+                <div class="controls">
+                    <button class="shuffle-btn" title="Shuffle">
+                        <i class="fa-solid fa-shuffle"></i>
+                    </button>
+                    <button class="backward" title="Previous">
+                        <i class="fa-solid fa-backward"></i>
+                    </button>
+                    <button class="play-pause-btn" title="Play/Pause">
+                        <i class="fa-solid fa-play" id="controlIcon"></i>
+                    </button>
+                    <button class="forward" title="Next">
+                        <i class="fa-solid fa-forward"></i>
+                    </button>
+                    <button class="repeat-btn" title="Repeat">
+                        <i class="fa-solid fa-repeat"></i>
+                    </button>
+                </div>
+
+                <div class="player-actions">
+                    <label class="volume-control" for="volume">
+                        <i class="fa-solid fa-volume-high" id="volumeIcon"></i>
+                        <input type="range" min="0" max="1" step="0.01" value="1" id="volume" />
+                    </label>
+                </div>
+            </div>
+          </div>
+        </section>
+    </main>
+    <!--Swiper JS-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--custom js-->
+    <script src="js/script.js"></script>
+</body>
+</html>
